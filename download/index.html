@@ -1,0 +1,116 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./w3.css">
+    <link rel="stylesheet" href="https://javazilla.com/assets/css/main.css">
+    <title>iCommon - Download</title>
+
+    <style>
+      html {font-family:sans-serif; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;background-color:rgb(254,254,254);background: url('../assets/bg-blue.png') no-repeat center center fixed;}
+      .border{margin-left:20%;margin-right:20%;background-color:rgba(0,0,0,0.94);color:white;margin-top:3em;}
+      h1 {font-size:4em;padding:0;margin:0;margin-top:32px} h3{font-size: 16px;padding:0;margin:0;color:#737373}
+      .p {color:#333333;padding:4px 4px 4px 4px;display:inline-block}
+       hr {background:#e6e6e6;}.ad {margin-top:100px}  a{text-decoration:none;cursor:pointer;}
+      .btn {position: relative;display:inline-block;margin:1px 0.5rem;margin-bottom:20px;padding:0;overflow:hidden;border-width:0;outline:none;border-radius:2px;box-shadow:0 3px 6px rgba(0,200,5,.6);background-color:green;color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
+	 .btn:hover,.btn:focus{background-color:#27ae60} .btn > * {position:relative;text-decoration:none} .btn span {display:inline-block;padding: 8px 4px;text-decoration:none}
+	 .btn:before {
+	   content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;
+       background-color: rgba(236, 240, 241, .3); -webkit-transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+	 }
+	 .btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out;}
+     video {width:280px;}
+	 
+	 body {
+	background: linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/bg-blue.png');
+	background-attachment: fixed; 
+	background-size: cover;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.container {
+	width: 50vw; height: 10wh;
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 1);	
+	border-radius: 5px;position:relative;z-index: 1;
+	background: rgb(0,0,0,0.5);
+	overflow: hidden;
+	color:white;
+}
+
+.container:before {
+	content: "";
+	position: absolute;
+	background: inherit;
+	z-index:-1;top:0; left:0;right:0;bottom:0;
+	box-shadow: inset 0 0 2000px rgba(0,0,0,1);
+	filter:blur(10px);
+	margin:-20px;
+}
+    </style>
+
+    <div style="">
+    <div id="body">
+        <br>
+        <div class="w3-center container" style="border-radius:16px;">
+            <br>
+            <h1 style="margin:0;padding:0;margin-top:1.5rem;">
+              <span style="margin:0;margin-bottom:0;padding:0;padding-bottom:0;display:inline-block;line-height:85px;color:rgb(240,240,240)">iCommonLib</span>
+            </h1>
+            <h3 style="margin-top:-10px;margin-left:0.1rem;font-size:1em;">Isaiah's Common library for mods</h3>
+            <br><br><br>
+			<span style="font-size:1.1rem;"><b>Download</b></span><br>
+            <a id="dl" href="./redirect.html"><button style="padding-left:32px;padding-right:32px;" class="btn" type="button"><span id="txt">Loading...</span></button></a>
+			<a id="dl2" href="./redirect.html"><button style="padding-left:32px;padding-right:32px;" class="btn" type="button"><span id="txt2">Loading...</span></button></a>
+			<div id="info" style="font-size:0.75em;padding-bottom:1rem;">loading info...</div><br><br><br><p>&nbsp;</p><br>
+
+            <span class="title" style="color:rgba(170,170,170);font-size:0.75rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</span><br>
+            <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="../download/apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
+
+            <br><br>
+        </div>
+        <br>
+    </div>
+    </div>
+
+    <div class="black" id="footer" style="bottom:0;position:fixed;background:transparent;padding:0;">
+        <table style="color:white;">
+            <tr class="w3-row">
+                <td class="w3-quarter">&nbsp;</td>
+                <td class="w3-half" style="padding-bottom:24px;color:rgb(80,90,80);">
+                    <span class="copy" style="font-size:.84em">Copyright &copy; 2018-2021 by Isaiah</span>
+                </td>
+                <td class="w3-quarter">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    var date = new Date(myObj.timestamp);
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
+	var formattedTime = date.toDateString().replace(date.getFullYear(), '') + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
+    document.getElementById("txt").innerHTML = 'For 1.17';
+	document.getElementById("txt2").innerHTML = 'For 1.16';
+    document.getElementById("dl").href = "https://ci.codemc.io/job/IsaiahPatton/job/Kongolan-cardboard-fork/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
+	var items = myObj.changeSet.items;
+	var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'>View Changelog</a><ul id='change' style='font-size:0.67rem; display:none;'>";
+	for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";
+	log += "</ul>"
+	document.getElementById("info").innerHTML = "Last update on " + formattedTime + ". " + log;
+  }
+};
+xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2FiCommon%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
+xmlhttp.send();
+
+function myFunction() {
+  var x = document.getElementById("change");
+  if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
+}
+</script>
+</html>

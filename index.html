@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>iCommon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<style>
+html,body {height:100vh;background:rgb(230,230,230)}
+.side{width:275px;margin-bottom:0;display:inline-block;}
+.w3-footer {colqor:rgb(230,230,230);font-size:.8em;backgraound:rgba(0,19,51,.9);padding-top:.9rem;padding-bottom:1rem;left:1rem;}
+.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108);background-color:#003899}
+.add{font-size:.8rem;color:rgb(230,230,230);padding-left:.2rem}
+
+a{text-decoration:none;cursor:pointer;}
+.btn {display:block;margin:4px auto;border-radius:2px;background-color:rgb(0,150,0);color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
+.btn:hover,.btn:focus{background-color:#27ae60}
+.btn span {display:block;padding: 2px 16px;text-decoration:none}
+</style>
+<body>
+
+<!--Head-->
+<div class="w3-container head" id="head" style="color:white;text-align:center">
+  <div style="float:left;padding-left:2rem;margin:0.1rem">
+    <h1 class="title cbt" style="font-size:3rem;padding-top:0;margin-top:0;margin-bottom:0;">iCommonLib</h1> 
+    <p class="cba" style="font-size:.7em;padding-top:0;margin-left:10px;margin-top:-10px;">Isaiah's common library for multiversion mods</p>
+  </div>
+  <div style="float:right;margin-right:6rem;">
+    <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548">
+        Partnered with<br><img src="./apex/apex.svg" width="250">
+    </a>
+  </div>
+</div>
+<div class="thebody">
+ <p class="w3-hide-small">&nbsp;</p>
+ <div class="w3-row">
+   <div class="w3-quarter w3-hide-small">
+     <p class="w3-container">Badges for mods:<br><br>
+     <img src="./assets/badge1.png" width="150"><br><br><img src="./assets/badge2.png" width="150"><br><br>
+     <img src="https://img.shields.io/badge/Requires-iCommonLib-black?style=flat-square">
+    </p>
+   </div>
+   <div class="w3-third">
+    <h3 style="padding-top:.8rem;">About</h3>
+    <p>iCommon is a library that aims to help improve multiversion support in mods.<br></p>
+    <p></p>
+    <p>Included events:
+      <ul>
+        <li>BlockEntityLoadEvent</li>
+        <li>CampfireBlockEntityCookEvent</li>
+        <li>PlayerExpOrbCollisionEvent</li>
+        <li>PlayerGamemodeChangeEvent</li>
+        <li>BlockEntityWriteNbtEvent</li>
+        <li>BlockItemPlaceEvent</li>
+        <li>ServerWorldInitEvent</li>
+      </ul>
+    </p>
+   </div>
+   <div class="w3-third" style="float:right;">
+    <div style="float:left;">
+     <a id="dl-17" href="https://modrinth.com/mod/icommon" target="_blank"><button class="w3-button btn" type="button"><span id="txt-17">Download from Modrinth</span></button></a><br>
+     <div style="border:3px solid #13425e;border-radius:8px;margin-top:2em;padding-bottom:.1rem;background:#13425e;"><div class="side" style="padding:.5rem"><span class="add">Advertisement</span></div>
+     <center><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" target="_blank" id="api"><img id="ap" src="./apex/apex2.png" width="275"></a></center></div>
+     </div>
+   </div>
+ </div>
+ <p style="padding:1rem;">&nbsp;</p>
+</div>
+
+<div class="w3-footer w3-center" style="position:fixed;bottom:0;">Copyright &copy; 2018-2021 by Isaiah</div>
+</body>
+<script>
+function f(){
+  document.getElementById("ap").src = "./apex/apex"+(Math.floor(Math.random()*3)+1)+".png";
+}
+f();
+setInterval(f, 6500);
+</script>
+</html>

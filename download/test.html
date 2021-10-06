@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<title>Download</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body {height:100vh;}
+body { background:rgb(240,240,240);}
+.side {
+  margin:2em;
+  margin-left:6%;
+  display:inline-block;color:white;border-radius:8px;
+}
+.sbartop {margin-top:0}
+.blue {background:rgb(0,65,122)}
+.dblu {background:rgb(0,48,96);border-radius:4px;}
+.adr {margin-right:5%;float:right;width:280px;}
+.w3-footer {position:absolute;bottom:8px;text-align:center;font-size:.7em;width:100%;}
+.head {padding:1em;box-shadow: 0px 3px 3px rgb(0,57,108);}
+.d {min-width:140px;margin:1px;}
+
+.thebody {max-width:100%;text-align:center;}
+</style>
+
+<body>
+
+<!--Head-->
+<div class="w3-container head" style="background:rgb(0,30,80);color:white;text-align:center;">
+  <h1>iCommon Library</h1>
+</div>
+<center>
+<div class="thebody">
+
+<!--Verbar-->
+<div class="w3-sidebar w3-bar-block side blue w3-card" style="box-shadow: 4px 4px 16px black;float:left;">
+  <span class="w3-bar-item sbartop dblu">Select Version</span>
+  <a href="javascript:open('1.17.1')" class="w3-bar-item w3-button">&middot; 1.17.1</a>
+  <a href="javascript:open('1.16.5')" class="w3-bar-item w3-button">&middot; 1.16.5</a>
+  <span class="w3-bar-item w3-button disable" style="cursor:not-allowed;color:rgb(99,99,99)">&middot; 1.12.2</span>
+</div>
+
+<!--Add-->
+<div class="w3-sidebar w3-bar-block side blue w3-card adr" style="height:280px;box-shadow: -1px 4px 16px black;">
+  <h3 class="w3-bar-item sbartop dblu" style="font-size:.8rem;">Advertisement</h3>
+  <center><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img id="ap" src="./apex/apex2.png"></a></center>
+</div>
+
+<center>
+<div class="w3-container" style="display:inline-block;padding-top:2.5em;text-align:left;">
+  <h2>Download iCommonLib for <span id="ver">{VER}</span></h2>
+  <p>iCommonLib is a library for mods that aims to help to make it easier<br>to develop for multiple game versions and mod loaders.</p>
+  <div class="ver" id="1.17.1">
+    <p style="margin-bottom:4px;">Downloads for MC 1.17.1:</p>
+    <button class="w3-button w3-green d"><i class="fa fa-download"></i> Fabric</button>
+    <button class="w3-button w3-green d" disabled><i class="fa fa-download"></i> Forge</button>
+    <button class="w3-button w3-green d" disabled><i class="fa fa-download"></i> Sugarcane</button>
+  </div>
+  <div class="ver" id="1.16.5">
+    <p style="margin-bottom:4px;">Downloads for MC 1.16.5:</p>
+    <button class="w3-button w3-green d"><i class="fa fa-download"></i> Fabric</button>
+    <button class="w3-button w3-green d"><i class="fa fa-download"></i> Forge</button>
+    <button class="w3-button w3-green d" disabled><i class="fa fa-download"></i> Sugarcane</button>
+  </div>
+  <br>
+  <div style="font-size:.9em;">
+    <p>Select version on the left or view all versions:</p>
+    <ul>
+      <li><a href="">Fabric 1.17.1</a></li>
+      <li><a href="">Fabric 1.16.5</a></li>
+      <li><a href="">Forge 1.16.5</a></li>
+    </ul>
+  </div>
+</div>
+</center>
+</div>
+</center>
+
+<div class="w3-footer">&copy; 2018-2021 by Isaiah</div>
+</body>
+<script>
+function open(id) {
+  var els = document.getElementsByClassName("ver");
+  for (i = 0; i < els.length; i++) els[i].style.display = "none";
+  document.getElementById(id).style.display = "block";
+  document.getElementById("ver").innerHTML = id;
+}
+open('1.17.1')
+
+var ran = Math.floor(Math.random()*2)+1;
+document.getElementById("ap").src = "./apex/apex" + ran + ".png";
+</script>
+</html>
